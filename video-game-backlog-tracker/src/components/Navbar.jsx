@@ -5,11 +5,13 @@ function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-title">
-                <h1>Video Game Backlog Tracker</h1>
+                <a href="/">Video Game Backlog Tracker</a>
             </div>
-            <div className="navbar-links">
-                <a href="/">Home</a>
-                <a href="/dashboard">Dashboard</a>
+            <div className="navbar-center">
+                <ul className="navbar-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                </ul>
             </div>
         </nav>
     );
