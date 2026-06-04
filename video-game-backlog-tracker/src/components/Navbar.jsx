@@ -1,4 +1,4 @@
-import React from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import "../styles/Navbar.css";
 
 function Navbar() {
@@ -9,10 +9,10 @@ function Navbar() {
             </div>
             <div className="navbar-center">
                 <ul className="navbar-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/stats">Stats</a></li>
-                    <li><a href="/Wheelspin">Wheel spin</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
+                    <li><Link to="/stats">Stats</Link></li>
+                    <li><Link to="/wheelspin">Wheel spin</Link></li>
                 </ul>
             </div>
         </nav>
