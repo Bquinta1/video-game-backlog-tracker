@@ -12,18 +12,22 @@
     display: flex;
     margin: 0;
     padding: 0;
+    justify-content: flex-end;
 }
 
 .navbar-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    color: white;
     text-align: center;
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 .navbar-center {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex: 1;
 }
 
@@ -45,4 +49,11 @@ ul li a {
 
 ul li a:hover {
   background-color: #111111;
+}
+
+a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }
