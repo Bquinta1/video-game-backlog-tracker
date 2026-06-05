@@ -1,4 +1,4 @@
-
+import "../styles/Wheelspin.css"
 
 function Wheelspin() {
     return (

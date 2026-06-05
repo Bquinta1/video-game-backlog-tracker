@@ -7,10 +7,10 @@ const User = require("../models/users");
 // Register
 router.post("/register", async (req, res) => {
     try {
-        const { username, email, password, firstname, lastname } = req.body
+        const { username, email, password} = req.body
 
-        if (!password || typeof password !== "string") {
-            return res.status(400).json({ message: "Password is required" });
+        if (!username || !email || !password) {
+            return res.status(400).json({ message: "Username, email, and password are required" });
         }
 
         const existingUser = await User.findOne({ $or: [{ email }, { username }] });
@@ -18,10 +18,10 @@ router.post("/register", async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
 
         if (existingUser) {
-            return res.status(400).json({ message: "Email or username unavailable" })
+            return res.status(400).json({ message: "Email or username already exists" })
         }
 
-        const newUser = new User({ username, email, passwordHash: hashedPassword, firstname, lastname });
+        const newUser = new User({ username, email, passwordHash: hashedPassword});
 
         await newUser.save();
 
